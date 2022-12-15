@@ -1,0 +1,344 @@
+* {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+button {
+  border: none;
+  outline: none;
+}
+.app__container {
+  display: flex;
+}
+
+.app__side-bar {
+  position: sticky;
+  top: 0;
+  width: 25%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.app__logo {
+  color: rgb(60, 59, 59);
+  font-family: "Montserrat", sans-serif !important;
+}
+.app__links-name {
+  font-size: 23px;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+.app__links-name > a {
+  color: grey;
+}
+.app__links-name {
+  padding: 8px 60px;
+}
+
+.app__links-jeans {
+  position: relative;
+  display: inline-block;
+}
+.app__dropdown {
+  transition-duration: all 1s ease-in;
+  position: absolute;
+  z-index: 1;
+  width: 175px;
+  padding: 20px;
+  padding-left: 50px;
+  margin-left: -60px;
+  background-color: #cccccc;
+  visibility: hidden;
+}
+.app__dropdown a {
+  margin-top: 10px;
+  color: white !important;
+}
+.app__dropdown a:hover {
+  color: black !important;
+}
+.app__links-jeans:hover .app__dropdown {
+  visibility: visible;
+}
+
+.app__links-name:hover {
+  background-color: #cccccc;
+  cursor: pointer;
+}
+.app__links-name:hover a {
+  color: black;
+}
+
+.app__bottom-links {
+  padding: 5px 60px;
+  font-size: 18px;
+}
+.app__bottom-links:hover {
+  background-color: #cccccc;
+  cursor: pointer;
+}
+.app__bottom-links > a {
+  color: grey;
+}
+.app__bottom-links:hover a {
+  color: black;
+}
+
+/* Right Side Start */
+.app__header {
+  width: 70%;
+}
+.app__shop-links {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #fff;
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+.app__shop-icons > img {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  margin-right: 20px;
+}
+.app__banner {
+  height: 90vh;
+  width: 100%;
+  position: relative;
+}
+.app__banner-img {
+  height: 100%;
+  background-image: url(./images/jeans.jpg);
+  background-size: 100% 100%;
+}
+.app__banner-title {
+  padding: 30px;
+  color: white;
+}
+.app__banner-title > h1 {
+  font-size: 64px;
+  letter-spacing: 0.7px;
+  font-family: sans-serif;
+  font-weight: lighter;
+}
+.app__banner-title > h2 {
+  font-size: 50px;
+  letter-spacing: 1.5px;
+  font-family: sans-serif;
+  font-weight: lighter;
+}
+.app__banner-title > button {
+  padding: 10px;
+  background-color: black;
+  color: white;
+  font-size: 28px;
+  width: 200px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+.app__banner-title > button:hover {
+  background-color: #fff;
+  color: black;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+#app__shop-items {
+  padding: 10px;
+}
+.app__shop-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  text-align: center;
+}
+.app__shop-details {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.app__shop-details::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: -90%;
+  background-color: black;
+  transition: all 0.3s ease-in-out;
+}
+.app__shop-details:hover::before {
+  bottom: 0;
+  background-image: linear-gradient(grey, black);
+}
+.app__shop-details > img {
+  height: 330px;
+}
+.app__shop-details h3,
+p {
+  font-weight: lighter;
+  position: relative;
+  color: white;
+  z-index: 9999;
+}
+.app__overlay {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  top: 40%;
+  position: absolute;
+  transition-duration: 0.5s;
+}
+.app__overlay > button {
+  padding: 12px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  width: 130px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.app__overlay > button:hover {
+  background-color: white;
+  color: black;
+}
+.app__overlay img {
+  display: none;
+  height: 16px;
+  width: 16px;
+  transform: translateY(20%);
+}
+.app__overlay > button:hover img {
+  display: inline;
+}
+.app__shop-details:hover .app__overlay {
+  opacity: 1;
+}
+
+.app__video {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+.app__video video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#app__subscribe {
+  background-color: black;
+  width: 100%;
+  padding: 50px;
+  color: white;
+}
+#app__subscribe h1 {
+  font-size: 50px;
+  letter-spacing: 1.5px;
+  font-weight: lighter;
+  font-family: "Times New Roman", Times, serif;
+}
+#app__subscribe p {
+  padding-top: 4px;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+}
+.app__subscribe-form {
+  width: 100%;
+  margin-top: 12px;
+}
+.app__subscribe-form > input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  outline: none;
+}
+.app__subscribe-form > input::placeholder {
+  font-size: 16px;
+}
+.app__subscribe-form button {
+  margin-top: 12px;
+  background-color: orangered;
+  color: white;
+  padding: 12px;
+  width: 120px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.app__form {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+.app__form-data {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.app__form-data input {
+  margin-top: 20px;
+  padding: 10px;
+  width: 400px;
+  outline: none;
+}
+.app__form-data button {
+  padding: 12px;
+  background-color: black;
+  color: white;
+  width: 400px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.app__footer {
+  background-color: rgb(34, 33, 33);
+  height: 300px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+}
+.app__about {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.app__about a {
+  text-decoration: underline !important;
+  font-size: 12px;
+  font-family: sans-serif !important;
+  color: white;
+}
+
+.app__store {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.app__store a {
+  color: white;
+}
+.app__Ewo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.app__Ewo h1 {
+  color: rgb(132, 92, 236);
+}
